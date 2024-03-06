@@ -1,13 +1,193 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap");
+
+/* .roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+} */
+
+/* ============= GLOBAL CSS =============== */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*/ html {
+  font-size: 100%;
+}
+
+:root {
+  /* colors */
+  --blue-50: #f0f9ff;
+  --blue-100: #e0f2fe;
+  --blue-200: #bae6fd;
+  --blue-300: #7dd3fc;
+  --blue-400: #38bdf8;
+  --blue-500: #0ea5e9;
+  --blue-600: #0284c7;
+  --blue-700: #0369a1;
+  --blue-800: #075985;
+  --blue-950: #0c4a6e;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  background-color: var(--blue-100);
+  color: var(--blue-950);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: var(--blue-700);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+h3,
+a {
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+h5 {
+  font-size: clamp(0.875rem, 1.5vw, 1.5rem);
+}
+
+.wrapper {
+  max-width: 1060px;
+  margin-inline: auto;
+  padding: 0 8px;
+}
+
+/* ============= NAVBAR =============== */
+
+.nav {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.links {
+}
+.link {
+  padding: 0 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color: var(--blue-500);
+}
+
+.links-heading {
+  color: var(--blue-950);
+}
+
+.links-heading-color {
+  color: var(--blue-500);
+}
+
+/* ============= HERO =============== */
+
+.image {
+  max-width: 100%;
+}
+
+.hero {
+  margin-top: 96px;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
+  gap: 48px;
+}
+
+.hero-right {
+  grid-column: 2/3;
+}
+
+.socials {
+  display: flex;
+  column-gap: 12px;
+  padding-top: 25px;
+}
+
+.btn-container {
+  width: 32px;
+}
+
+@media screen and (max-width: 450px) {
+  .hero-image {
+    display: none;
+  }
+  .image {
+    display: hidden;
+  }
+  .hero-container {
+    gap: 0px;
+  }
 }
