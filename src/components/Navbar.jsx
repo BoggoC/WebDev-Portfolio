@@ -1,5 +1,5 @@
 const links = [
-  { id: 1, href: "#skills", linksText: "skills" },
+  { id: 1, href: "#techStack", linksText: "tech-stack" },
   { id: 2, href: "#about", linksText: "about" },
   { id: 3, href: "#projects", linksText: "projects" },
 ];
