@@ -13,7 +13,7 @@ const Hero = () => {
   // }
 
   return (
-    <section className="hero">
+    <section id="home" className="hero">
       <div className="wrapper">
         {homePage.map((homePageComponent) => {
           const { heroId, heroImg, heroTxt, socialLink } = homePageComponent;

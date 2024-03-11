@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechStack from "./components/TechStack";
+import Projects from "./components/Projects";
 import { useFetchData } from "./components/fetchData";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <TechStack />
+      <Projects />
     </>
   );
 };

@@ -1,13 +1,28 @@
+import { useState, useEffect } from "react";
+
 const links = [
+  { id: 0, href: "#home", linksText: "home" },
   { id: 1, href: "#techStack", linksText: "tech-stack" },
-  { id: 2, href: "#about", linksText: "about" },
-  { id: 3, href: "#projects", linksText: "projects" },
+  { id: 2, href: "#projects", linksText: "projects" },
 ];
 
 const Navbar = () => {
+  const [sticky, setSticky] = useState("");
+
+  useEffect(() => {
+    window.addEventListener("scroll", stickyNavBar);
+  }, []);
+
+  const stickyNavBar = () => {
+    if (window !== undefined) {
+      let windowHeight = window.scrollY;
+      windowHeight > 0 ? setSticky("sticky") : setSticky("");
+    }
+  };
+
   return (
-    <nav className="wrapper">
-      <div className="nav">
+    <div className={`nav ${sticky}`}>
+      <nav className="wrapper">
         <h2 className="links-heading">
           Web<span className="links-heading-color">Dev Portfolio</span>
         </h2>
@@ -21,8 +36,8 @@ const Navbar = () => {
             );
           })}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 

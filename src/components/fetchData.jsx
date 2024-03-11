@@ -15,7 +15,7 @@ export const useFetchData = () => {
       });
 
       const homePage = response.items.map((item) => {
-        const { heroSection, techStackSection } = item.fields;
+        const { heroSection, techStackSection, projectsSection } = item.fields;
 
         const { heroImage, heroText, socials } = heroSection.fields;
 
@@ -25,6 +25,28 @@ export const useFetchData = () => {
 
         const { techStackTitle, techStackComponent } = techStackSection.fields;
         const techStackId = item.sys.id;
+
+        const { projectsTitle, projectsComponent } = projectsSection.fields;
+        const projectsId = item.sys.id;
+
+        const projectsCard = projectsComponent.map((item) => {
+          const {
+            projectCardImage,
+            projectCardText,
+            projectCardTitle,
+            projectCardUrl,
+          } = item.fields;
+          const projectCardId = item.sys.id;
+          const projectCardImg = projectCardImage?.fields?.file?.url;
+
+          return {
+            projectCardId,
+            projectCardImg,
+            projectCardTitle,
+            projectCardText,
+            projectCardUrl,
+          };
+        });
 
         const techStackCard = techStackComponent.map((item) => {
           const { techStackCardImage, techStackCardTitle, techStackCardText } =
@@ -58,9 +80,12 @@ export const useFetchData = () => {
           heroImg,
           heroTxt,
           socialLink,
+          techStackCard,
           techStackTitle,
           techStackId,
-          techStackCard,
+          projectsCard,
+          projectsTitle,
+          projectsId,
         };
       });
 
