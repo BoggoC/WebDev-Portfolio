@@ -3,16 +3,13 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
+import BackToTopBtn from "./components/BackToTopBtn";
 import { useFetchData } from "./components/fetchData";
 
 const App = () => {
   const { loading } = useFetchData();
   if (loading) {
-    return (
-      <section className="hero">
-        <h2>Loading...</h2>
-      </section>
-    );
+    return <section className="loading"></section>;
   }
   return (
     <>
@@ -20,6 +17,7 @@ const App = () => {
       <Hero />
       <TechStack />
       <Projects />
+      <BackToTopBtn />
     </>
   );
 };

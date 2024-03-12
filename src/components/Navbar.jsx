@@ -23,18 +23,20 @@ const Navbar = () => {
   return (
     <div className={`nav ${sticky}`}>
       <nav className="wrapper">
-        <h2 className="links-heading">
-          Web<span className="links-heading-color">Dev Portfolio</span>
-        </h2>
-        <div className="links">
-          {links.map((link) => {
-            const { id, href, linksText } = link;
-            return (
-              <a key={id} href={href} className="link">
-                {linksText}
-              </a>
-            );
-          })}
+        <div className="nav-container">
+          <h2 className="links-heading">
+            Web<span className="links-heading-color">Dev Portfolio</span>
+          </h2>
+          <div className="links">
+            {links.map((link) => {
+              const { id, href, linksText } = link;
+              return (
+                <a key={id} href={href} className="link">
+                  {linksText}
+                </a>
+              );
+            })}
+          </div>
         </div>
       </nav>
     </div>
