@@ -21,7 +21,18 @@ export const useFetchData = () => {
 
         const heroId = item.sys.id;
         const heroImg = heroImage?.fields?.file?.url;
-        const heroTxt = documentToReactComponents(heroText);
+        const options = {
+          renderText: (text) => {
+            return text.split("\n").reduce((children, textSegment, index) => {
+              return [
+                ...children,
+                index > 0 && <br key={index} />,
+                textSegment,
+              ];
+            }, []);
+          },
+        };
+        const heroTxt = documentToReactComponents(heroText, options);
 
         const { techStackTitle, techStackComponent } = techStackSection.fields;
         const techStackId = item.sys.id;

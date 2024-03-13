@@ -2,15 +2,6 @@ import { useFetchData } from "./fetchData";
 
 const Hero = () => {
   const { homePage } = useFetchData();
-  // const { loading, homePage } = useFetchData();
-
-  // if (loading) {
-  //   return (
-  //     <section className="hero">
-  //       <h2>Loading...</h2>
-  //     </section>
-  //   );
-  // }
 
   return (
     <section id="home" className="hero">
@@ -29,7 +20,6 @@ const Hero = () => {
                   {socialLink.map((socials) => {
                     const { socialId, socialImg, socialTitle, socialUrl } =
                       socials;
-                    // console.log(socials);
                     return (
                       <div key={socialId} className="social-btn-container">
                         <a href={socialUrl} target="_blank" rel="noreferrer">

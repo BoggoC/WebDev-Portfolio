@@ -2,15 +2,6 @@ import { useFetchData } from "./fetchData";
 
 const TechStack = () => {
   const { homePage } = useFetchData();
-  // const { loading, homePage } = useFetchData();
-
-  // if (loading) {
-  //   return (
-  //     <section className="hero">
-  //       <h2>Loading...</h2>
-  //     </section>
-  //   );
-  // }
 
   return (
     <section id="techStack" className="tech-stack">
