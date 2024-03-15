@@ -164,6 +164,15 @@ h5 {
   grid-column: 2/3;
 }
 
+.hero a {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: var(--blue-500);
+}
+
+.hero a:hover {
+  color: var(--blue-700);
+}
+
 .socials {
   display: flex;
   column-gap: 12px;
