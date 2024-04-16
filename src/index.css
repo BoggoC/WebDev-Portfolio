@@ -230,8 +230,7 @@ h5 {
 
 .project-card-container {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: auto auto;
   gap: 32px;
 }
 
@@ -309,5 +308,10 @@ h5 {
   }
   .projects {
     margin-bottom: 0px;
+  }
+  .project-card-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 32px;
   }
 }

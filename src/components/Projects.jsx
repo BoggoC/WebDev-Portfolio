@@ -23,7 +23,10 @@ const Projects = () => {
                   } = projectCardComponent;
 
                   return (
-                    <div key={projectCardId} className="projects-cards">
+                    <div
+                      key={projectCardId}
+                      className="projects-cards project-card"
+                    >
                       <a
                         href={projectCardUrl}
                         target="_blank"
