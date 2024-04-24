@@ -173,6 +173,10 @@ h5 {
   color: var(--blue-700);
 }
 
+.about-text p {
+  line-height: 1.1;
+}
+
 .socials {
   display: flex;
   column-gap: 12px;
@@ -211,6 +215,10 @@ h5 {
   padding-bottom: 16px;
 }
 
+.tech-stack-card-text {
+  line-height: 1.1;
+}
+
 /* ============= PROJECTS =============== */
 
 .projects-title {
@@ -218,7 +226,6 @@ h5 {
 }
 
 .projects {
-  /* padding: 64px 0; */
   padding: 128px 0;
   margin-bottom: 600px;
 }
@@ -230,7 +237,7 @@ h5 {
 
 .project-card-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   gap: 32px;
 }
 
@@ -253,6 +260,7 @@ h5 {
 }
 
 .project-card-text {
+  line-height: 1.1;
   padding: 16px 12px;
 }
 

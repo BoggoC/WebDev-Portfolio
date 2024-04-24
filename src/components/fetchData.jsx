@@ -48,13 +48,17 @@ export const useFetchData = () => {
             projectCardUrl,
           } = item.fields;
           const projectCardId = item.sys.id;
+          const projectCardTxt = documentToReactComponents(
+            projectCardText,
+            options
+          );
           const projectCardImg = projectCardImage?.fields?.file?.url;
 
           return {
             projectCardId,
             projectCardImg,
             projectCardTitle,
-            projectCardText,
+            projectCardTxt,
             projectCardUrl,
           };
         });

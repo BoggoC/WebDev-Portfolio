@@ -18,7 +18,7 @@ const Projects = () => {
                     projectCardId,
                     projectCardImg,
                     projectCardTitle,
-                    projectCardText,
+                    projectCardTxt,
                     projectCardUrl,
                   } = projectCardComponent;
 
@@ -41,7 +41,7 @@ const Projects = () => {
                         <h4 className="project-card-title">
                           {projectCardTitle}
                         </h4>
-                        <p className="project-card-text">{projectCardText}</p>
+                        <p className="project-card-text">{projectCardTxt}</p>
                       </a>
                     </div>
                   );
