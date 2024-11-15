@@ -15,7 +15,12 @@ export const useFetchData = () => {
       });
 
       const homePage = response.items.map((item) => {
-        const { heroSection, techStackSection, projectsSection } = item.fields;
+        const {
+          heroSection,
+          techStackSection,
+          projectsSection,
+          threeProjectsSection,
+        } = item.fields;
 
         const { heroImage, heroText, socials } = heroSection.fields;
 
@@ -37,8 +42,12 @@ export const useFetchData = () => {
         const { techStackTitle, techStackComponent } = techStackSection.fields;
         const techStackId = item.sys.id;
 
+        // --- projects section ---
+
         const { projectsTitle, projectsComponent } = projectsSection.fields;
         const projectsId = item.sys.id;
+
+        // --- projects section cards ---
 
         const projectsCard = projectsComponent.map((item) => {
           const {
@@ -46,6 +55,7 @@ export const useFetchData = () => {
             projectCardText,
             projectCardTitle,
             projectCardUrl,
+            newTab,
           } = item.fields;
           const projectCardId = item.sys.id;
           const projectCardTxt = documentToReactComponents(
@@ -59,6 +69,43 @@ export const useFetchData = () => {
             projectCardImg,
             projectCardTitle,
             projectCardTxt,
+            projectCardUrl,
+            newTab,
+          };
+        });
+
+        // --- three projects section ---
+        const {
+          threeProjectsTitle,
+          threeProjectsDescription,
+          threeProjectsComponent,
+        } = threeProjectsSection.fields;
+        const threeProjectsCardsTxt = documentToReactComponents(
+          threeProjectsDescription,
+          options
+        );
+        const threeProjectsId = item.sys.id;
+
+        // --- three projects section cards ---
+        const threeProjectsCards = threeProjectsComponent.map((item) => {
+          const {
+            projectCardImage,
+            projectCardTitle,
+            projectCardText,
+            projectCardUrl,
+          } = item.fields;
+          const threeProjectsCardId = item.sys;
+          const threeProjectsCardTxt = documentToReactComponents(
+            projectCardText,
+            options
+          );
+          const threeProjectsCardImage = projectCardImage?.fields?.file?.url;
+
+          return {
+            threeProjectsCardId,
+            threeProjectsCardImage,
+            projectCardTitle,
+            threeProjectsCardTxt,
             projectCardUrl,
           };
         });
@@ -101,6 +148,10 @@ export const useFetchData = () => {
           projectsCard,
           projectsTitle,
           projectsId,
+          threeProjectsCards,
+          threeProjectsTitle,
+          threeProjectsCardsTxt,
+          threeProjectsId,
         };
       });
 

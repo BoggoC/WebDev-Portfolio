@@ -20,6 +20,7 @@ const Projects = () => {
                     projectCardTitle,
                     projectCardTxt,
                     projectCardUrl,
+                    newTab,
                   } = projectCardComponent;
 
                   return (
@@ -29,15 +30,16 @@ const Projects = () => {
                     >
                       <a
                         href={projectCardUrl}
-                        target="_blank"
+                        className="project-card"
+                        target={newTab ? "_blank" : "_self"}
                         rel="noreferrer"
-                        className="project-cards"
                       >
                         <img
                           src={projectCardImg}
                           alt={projectCardTitle}
                           className="project-image"
                         />
+
                         <h4 className="project-card-title">
                           {projectCardTitle}
                         </h4>

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 const links = [
-  { id: 0, href: "#home", linksText: "home" },
-  { id: 1, href: "#techStack", linksText: "skills" },
-  { id: 2, href: "#projects", linksText: "projects" },
+  { id: 0, href: "/#home", linksText: "home" },
+  { id: 1, href: "/#techStack", linksText: "skills" },
+  { id: 2, href: "/#projects", linksText: "projects" },
 ];
 
 const Navbar = () => {
