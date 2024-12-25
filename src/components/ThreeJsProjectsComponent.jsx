@@ -32,7 +32,7 @@ const ThreeJsProjectsComponent = () => {
                   return (
                     <div
                       key={threeProjectsCardId}
-                      className="projects-cards project-card"
+                      className="projects-cards project-card three-cards"
                     >
                       <a
                         href={projectCardUrl}

@@ -287,6 +287,9 @@ h5 {
 .three-project-card-container {
   padding: 50px 0 50px 0;
 }
+.three-cards {
+  margin-bottom: 25px;
+}
 
 /* =============== SCROLL UP ===============  */
 
